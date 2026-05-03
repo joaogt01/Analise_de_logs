@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.Analizador_de_logs</groupId>
+    <artifactId>Analise_de_logs</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>Analise_de_logs</name>
+    <description>Analisador de arquivos de log Apache </description>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <version.compiler.plugin>3.13.0</version.compiler.plugin>
+        <version.jar.plugin>3.4.1</version.jar.plugin>
+        <version.site.plugin>3.12.1</version.site.plugin>
+        <version.project.info.plugin>3.5.0</version.project.info.plugin>
+        <version.javadoc.plugin>3.7.0</version.javadoc.plugin>
+        <version.surefire.plugin>3.2.5</version.surefire.plugin>
+    </properties>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version.compiler.plugin}</version>
+                <configuration>
+                    <release>21</release>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${version.jar.plugin}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.loganalyzer.Main</mainClass>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                        <manifestEntries>
+                            <Built-By>${project.artifactId}</Built-By>
+                        </manifestEntries>
+                    </archive>
+                    <finalName>${project.artifactId}</finalName>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.12.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${version.site.plugin}</version>
+                <configuration>
+                    <locales>pt_BR</locales>
+                    <outputEncoding>UTF-8</outputEncoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${version.project.info.plugin}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${version.surefire.plugin}</version>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.12.0</version>
+                <configuration>
+                    <source>21</source>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                    <charset>UTF-8</charset>
+                    <failOnError>false</failOnError>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>javadoc</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${version.project.info.plugin}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>index</report>
+                            <report>summary</report>
+                            <report>team</report>
+                            <report>scm</report>
+                            <report>dependencies</report>
+                            <report>plugins</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+        </plugins>
+    </reporting>
+
+    <developers>
+        <developer>
+            <id>membro1</id>
+            <name>Nome do Membro 1</name>
+            <email>email1@exemplo.com</email>
+            <roles><role>developer</role></roles>
+        </developer>
+        <developer>
+            <id>membro2</id>
+            <name>Nome do Membro 2</name>
+            <email>email2@exemplo.com</email>
+            <roles><role>developer</role></roles>
+        </developer>
+        <developer>
+            <id>membro3</id>
+            <name>Nome do Membro 3</name>
+            <email>email3@exemplo.com</email>
+            <roles><role>developer</role></roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/joaogt01/Analise_de_logs</url>
+        <connection>scm:git:https://github.com/joaogt01/Analise_de_logs</connection>
+        <developerConnection>scm:git:https://github.com/joaogt01/Analise_de_logs</developerConnection>
+    </scm>
+
+</project>

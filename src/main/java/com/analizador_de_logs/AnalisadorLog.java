@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class AnalisadorLog {
-    private LeitorLog leitorLog;
+    //private LeitorLog leitorLog;
     private EscritorArquivo escritorArquivo;
 
     public void RecursosGrandes(){

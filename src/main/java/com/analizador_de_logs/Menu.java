@@ -8,8 +8,9 @@ public class Menu {
 
     public void iniciar(){
         exibirMenu();
-        int opcao = scanner.nextInt();
+        int opcao;
         do{
+            opcao = scanner.nextInt();
             switch (opcao){
                 case 1:
                     analisador.RecursosGrandes();
@@ -19,10 +20,16 @@ public class Menu {
                     break;
                 case 3:
                     analisador.SistemasOperacionais();
+                    break;
                 case 4:
                     analisador.MediaPost();
+                    break;
                 case 0:
                     System.out.println("Finalizando...");
+                    break;
+                default:
+                    System.out.println("Essa opçao nao existe, digite uma opçao válida(1 a 4, 0 para sair)");
+                    exibirMenu();
                     break;
             }
         } while (opcao != 0);

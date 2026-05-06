@@ -45,7 +45,6 @@ public class Menu {
     }
 
     private int lerOpcao(){
-
         return 0;
     }
 }

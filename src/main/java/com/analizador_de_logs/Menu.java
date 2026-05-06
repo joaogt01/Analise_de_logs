@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class Menu {
     private Scanner scanner = new Scanner(System.in);
     private AnalisadorLog analisador;
-    int opcao = scanner.nextInt();
 
     public void iniciar(){
         exibirMenu();
+        int opcao = scanner.nextInt();
         do{
             switch (opcao){
                 case 1:
@@ -21,8 +21,11 @@ public class Menu {
                     analisador.SistemasOperacionais();
                 case 4:
                     analisador.MediaPost();
+                case 0:
+                    System.out.println("Finalizando...");
+                    break;
             }
-        } while (opcao == 0);
+        } while (opcao != 0);
     }
 
     private void exibirMenu(){

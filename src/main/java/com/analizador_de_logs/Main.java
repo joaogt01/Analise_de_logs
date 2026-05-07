@@ -51,14 +51,15 @@ public class Main {
 
         // Verifica se o arquivo existe antes de inicializar qualquer componente.
         if (!arquivoLog.exists()){
-            System.out.println("arquivo não encontrado");
+            System.out.println("arquivo não encontrado: " + arquivoLog.getAbsolutePath());
+            return;
         }
 
         // Inicialização dos componentes com injeção de dependência via construtor.
         Scanner scanner = new Scanner(System.in);
         EscritorArquivo escritor = new EscritorArquivo();
-        AnalisadorLog analisador = new AnalisadorLog();
-        Menu menu = new Menu();
+        AnalisadorLog analisador = new AnalisadorLog(arquivoLog, escritor);
+        Menu menu = new Menu(scanner, analisador);
 
         // Delega toda a execução ao Menu (a Main não conhece as opções do sistema).
         menu.iniciar();
